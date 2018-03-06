@@ -1,0 +1,26 @@
+subscription OnAnyPush {
+  Push {
+    id
+    branch
+    after {
+      sha
+      message
+      committer {
+        person {
+          chatId {
+            screenName
+          }
+        }
+      }
+    }
+    repo {
+      owner
+      name
+      channels {
+        name
+        id
+      }
+      defaultBranch
+    }
+  }
+}

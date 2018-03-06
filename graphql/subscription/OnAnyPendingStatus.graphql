@@ -1,0 +1,36 @@
+subscription OnAnyPendingStatus {
+  Status(state: pending) {
+    commit {
+      sha
+      message
+      statuses {
+        context
+        description
+        state
+      }
+      repo {
+        owner
+        name
+        channels {
+          name
+          id
+        }
+        org {
+          chatTeam {
+            id
+          }
+        }
+      }
+      pushes {
+        branch
+        before {
+          sha
+        }
+      }
+    }
+    state
+    targetUrl
+    context
+    description
+  }
+}
